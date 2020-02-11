@@ -1,32 +1,27 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+
+        <keep-alive exclude="Mv,TopList,SongList">
+            <router-view :class="{bottomGrow: $store.state.playlist.length>0}"/>
+        </keep-alive>
+
+        <Player/>
     </div>
-    <router-view/>
-  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+    import Player from "@/views/player/Player";
+    export default {
+        name: "App",
+        components: {Player},
+        created() {
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+        }
     }
-  }
-}
+</script>
+
+<style lang="scss">
+    .bottomGrow{
+        margin-bottom: .6rem;
+    }
 </style>

@@ -1,0 +1,16 @@
+
+:root{
+    --large: .18rem;
+    --large-x: .22rem;
+    --large-s: .17rem;
+
+
+    --normal: .14rem;
+    --normal-x: .16rem;
+    --normal-s: .12rem;
+
+
+    --small: .11rem;
+    --small-x: .12rem;
+    --small-s: .09rem;
+}

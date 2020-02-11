@@ -1,0 +1,15 @@
+
+:root {
+    --text-color: #323233;
+    --text-info: #93969c;
+    --border-color: #ebedf0;
+    --active-color: #f2f3f5;
+    --background-color: #f7f8fa;
+    --background-color-light: #fafafa;
+
+    --red: #ce2127;
+    --red-light: #ef628a;
+    --blue: #529eec;
+    --yellow: #f4f954;
+    --violet: #8156e8;
+}

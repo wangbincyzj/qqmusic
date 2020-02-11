@@ -1,0 +1,16 @@
+.nowrap{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.clear::after{
+    content: "";
+    display: table;
+    height: 0;
+}
+.clear::before{
+    content: "";
+    display: table;
+    height: 0;
+}
