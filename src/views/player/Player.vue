@@ -47,7 +47,8 @@
                     </div>
                     <div class="right">
                         <i class="iconfont icon-xiai"/>
-                        <a v-if="src&&songInfo" :href="src" :download="`${songInfo.title}-${songInfo.singer[0].name}.mp3`"><i class="iconfont icon-xiazai"/></a>
+                        <a v-if="src&&songInfo"  :href="src" ><i class="iconfont icon-xiazai"/></a>
+                        <!--:download="`${songInfo.title}-${songInfo.singer[0].name}.mp3`"-->
                     </div>
                 </div>
             </div>
@@ -361,7 +362,7 @@
 
         .bottom {
             height: 25%;
-
+            padding-top: .2rem;
             .progress-wrapper {
                 color: white;
                 display: flex;
@@ -390,7 +391,8 @@
             }
 
             .operators {
-                line-height: 100px;
+
+                line-height: 0.8rem;
                 display: flex;
                 justify-content: space-evenly;
                 text-align: center;

@@ -28,6 +28,7 @@
                     nav:[
                         {name:"推荐", path:"/recommend"},
                         {name:"排行", path: "/rank"},
+                        {name:"我喜欢", path: "/fav"},
                     ]
                 },
                 listInfo : [
