@@ -40,7 +40,7 @@
                 <img :src="songPic" alt="" v-if="songPic">
                 <div class="infos" v-if="songInfo">
                     <div class="left">
-                        <div class="name">{{songInfo.title}}</div>
+                        <div class="name">{{songInfo.title}} <span class="mv" v-if="songInfo.mv.id!==0" @click="goMv">MV</span></div>
                         <div class="singer">{{songInfo.singer[0].name}}</div>
                         <div class="album"><span>专辑:</span>{{songInfo.album.name}}</div>
                         <div class="timePublic"><span>发行:</span>{{songInfo.time_public}}</div>
@@ -151,7 +151,7 @@
         methods: {
             percentChange(percent) {
                 this.onMove = true;
-                this.currentTime = percent * this.duration
+                this.currentTime = percent * this.duration;
             },
             percentChangeEnd(percent) {
                 this.onMove = false;
@@ -165,6 +165,12 @@
             },
             error() {
 
+            },
+            goMv() {
+                this.player.pause()
+                console.log(this.songInfo.mv.id);
+                this.$router.push(`/mv/${this.songInfo.mv.vid}`);
+                this.setFullScreen(false);
             },
             timeUpdate(e) {
                 if (this.onMove) return;
@@ -337,6 +343,12 @@
 
                         &.name {
                             font-size: var(--large-x);
+                            span.mv{
+                                font-size: var(--small-x);
+                                color: #ddff99;
+                                border: 1px solid var(--border-color);
+                                padding: 0 .03rem;
+                            }
                         }
                     }
                 }

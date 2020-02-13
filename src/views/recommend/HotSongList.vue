@@ -21,7 +21,10 @@
         components: {HotSongListItem},
         data() {
             return {
-                listItems: []
+                listItems: [
+                    {dissname: "Api专用歌单", dissid:2790736553, imgurl:"http://y.gtimg.cn/mediastyle/y/img/cover_love_300.jpg"},
+                    {dissname: "周杰伦专场", dissid:7143084629, imgurl:"http://y.gtimg.cn/music/photo_new/T002R300x300M000003RMaRI1iFoYd.jpg?n=1"},
+                ]
             }
         },
         created() {
@@ -31,7 +34,8 @@
             init() {
                 list_api.getSongListHot(10000000, 1).then(ret => {
                     if (ret.code === 200) {
-                        this.listItems = ret.data.list;
+                        this.listItems.push(...ret.data.list)
+                        console.log(this.listItems)
                     }
                 })
             }
